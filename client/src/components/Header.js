@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
+
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
@@ -11,7 +13,9 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login With Google</a>
+            <a href="/auth/google">
+              <FontAwesome name="google" size="2x" /> Login With Google
+            </a>
           </li>
         );
       default:
@@ -20,7 +24,7 @@ class Header extends Component {
             <Payments />
           </li>,
           <li key="3" style={{ margin: '0 10px' }}>
-            Credits: {this.props.auth.credits}
+            Donations: ${this.props.auth.credits}.00
           </li>,
           <li key="2">
             <a href="/api/logout">Logout</a>
@@ -30,14 +34,19 @@ class Header extends Component {
   }
 
   render() {
+    const styles = {
+      navBar: {
+        background: '#cc0000'
+      }
+    };
     return (
-      <nav>
+      <nav style={styles.navBar}>
         <div className="nav-wrapper">
           <Link
-            to={this.props.auth ? '/surveys' : '/'}
+            to={this.props.auth ? '/posts' : '/'}
             className="left brand-logo"
           >
-            Emaily
+            Family History Seeker
           </Link>
           <ul className="right">
             {this.renderContent()}
