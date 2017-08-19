@@ -1,6 +1,14 @@
-background: url("../img/bg.jpg") no-repeat bottom center scroll;
-background-color: black;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+.download-section {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+  text-align: right;
+  color: cyan;
+  background: url("../img/bg.jpg") no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
