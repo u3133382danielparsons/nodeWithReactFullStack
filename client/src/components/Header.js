@@ -20,9 +20,6 @@ class Header extends Component {
         );
       default:
         return [
-          <li key="1">
-            <Payments />
-          </li>,
           <li key="3" style={{ margin: '0 10px' }}>
             Donations: ${this.props.auth.credits}.00
           </li>,
@@ -40,19 +37,24 @@ class Header extends Component {
       }
     };
     return (
-      <nav style={styles.navBar}>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? '/posts' : '/'}
-            className="left brand-logo"
-          >
-            Family History Seeker
-          </Link>
-          <ul className="right">
-            {this.renderContent()}
-          </ul>
-        </div>
-      </nav>
+      <div>
+        <nav style={styles.navBar}>
+          <div className="nav-wrapper">
+            <Link
+              to={this.props.auth ? '/posts' : '/'}
+              className="left brand-logo"
+            >
+              Trove
+            </Link>
+            <ul className="right">
+              {this.renderContent()}
+            </ul>
+          </div>
+        </nav>
+        <span>
+          <Payments />
+        </span>
+      </div>
     );
   }
 }
